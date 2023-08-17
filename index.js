@@ -8,10 +8,16 @@ const app = express();
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.json({
+    status: res.statusCode,
+    anotherRoute: `http://${req.get("host")}/another-route`,
+  });
 });
 app.get("/another-route", (req, res) => {
-  res.send("Another route");
+  res.json({
+    status: res.statusCode,
+    baseRoute: `http://${req.get("host")}`,
+  });
 });
 
 const port = process.env.PORT || 5000;

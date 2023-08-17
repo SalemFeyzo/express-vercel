@@ -1,0 +1,5 @@
+###Get base endpoint
+GET http://localhost:5000
+
+###Get the another route
+GET http://localhost:5000/another-route
